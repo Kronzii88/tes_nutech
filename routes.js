@@ -87,7 +87,7 @@ module.exports = (app) => {
     res.status(200).json({
       metadata: {
         status: 200,
-        message: "Api STEMBA Mobile ready to use!",
+        message: "Api TES NUTECH ready to use!",
       },
       response: {
         data: {
