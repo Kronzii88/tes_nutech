@@ -1,0 +1,1091 @@
+{
+	"info": {
+		"_postman_id": "2601bb33-3299-4c33-9470-0e4277a16955",
+		"name": "TES Nutech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8413048"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"res.email@gmail.com\",\n    \"first_name\": \"Tes\",\n    \"last_name\": \"User\",\n    \"password\":\"abcd1234!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost_express}}register",
+							"host": [
+								"{{localhost_express}}register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"res.email@gmail.com\",\n    \"first_name\": \"Tes\",\n    \"last_name\": \"User\",\n    \"password\":\"abcd1234!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost_express}}auth/register",
+									"host": [
+										"{{localhost_express}}auth"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-fy+HaeF3QVCOfv5kkYm98AMUSMQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 04:40:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Registrasi berhasil silahkan login\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"res.email@gmail.com\",\n    \"password\":\"abcd1234!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost_express}}login",
+							"host": [
+								"{{localhost_express}}login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"res.email@gmail.com\",\n    \"password\":\"abcd1234!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost_express}}auth/login",
+									"host": [
+										"{{localhost_express}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "234"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ea-ahTa1t6IsDFhZ0e1lJMTsSPb8VA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 05:00:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Login Sukses\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost_express}}profile",
+							"host": [
+								"{{localhost_express}}profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{localhost_express}}user",
+									"host": [
+										"{{localhost_express}}user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a8-w+iWTvyFidmE0rZzRxHeBPbdQAQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 06:13:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 102,\n    \"message\": \"data user tidak ditemukan\",\n    \"data\": {\n        \"id\": 2,\n        \"email\": \"res.email@gmail.com\",\n        \"first_name\": \"Tes\",\n        \"last_name\": \"User\",\n        \"profil_image\": null,\n        \"balance\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"User Edited\",\n  \"last_name\": \"Nutech Edited\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost_express}}user",
+							"host": [
+								"{{localhost_express}}user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit Profile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"first_name\": \"User Edited\",\n  \"last_name\": \"Nutech Edited\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost_express}}user",
+									"host": [
+										"{{localhost_express}}user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a0-wkYYZsoBZHk98HTQ/UpnPbCEoZ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 06:25:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Update Pofile berhasil\",\n    \"data\": {\n        \"email\": \"res.email@gmail.com\",\n        \"first_name\": \"User Edited\",\n        \"last_name\": \"Nutech Edited\",\n        \"profile_image\": \"\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "edit image profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/ezyharofi/Downloads/3374020505980001_kartuAkun-2.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost_express}}profile/image",
+							"host": [
+								"{{localhost_express}}profile"
+							],
+							"path": [
+								"image"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "edit profile image",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/ezyharofi/Downloads/demo-image2.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost_express}}user/image",
+									"host": [
+										"{{localhost_express}}user"
+									],
+									"path": [
+										"image"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "231"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e7-GerM7vI3hCme0EkW8WwbmKWe30Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 07:48:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Update Pofile berhasil\",\n    \"data\": {\n        \"email\": \"res.email@gmail.com\",\n        \"first_name\": \"User Edited\",\n        \"last_name\": \"Nutech Edited\",\n        \"profile_image\": \"https://nutech.s3.ap-southeast-1.wasabisys.com/demo-image2.png-10031515\"\n    }\n}"
+						},
+						{
+							"name": "error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/ezyharofi/Downloads/3374020505980001_kartuAkun-2.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{localhost_express}}profile/image",
+									"host": [
+										"{{localhost_express}}profile"
+									],
+									"path": [
+										"image"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-ImBfQQi72Li/7QNyMpmoZyeY57Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 08:01:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 102,\n    \"message\": \"Format Image tidak sesuai\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "Banner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost_express}}banner",
+							"host": [
+								"{{localhost_express}}banner"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost_express}}banner",
+									"host": [
+										"{{localhost_express}}banner"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "838"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"346-AyjGIuZ1X39E+bikHzQBL5UF5TQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 08:42:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Sukses\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"banner_name\": \"Banner 1\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"id\": 2,\n            \"banner_name\": \"Banner 2\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"id\": 3,\n            \"banner_name\": \"Banner 3\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"id\": 4,\n            \"banner_name\": \"Banner 4\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"id\": 5,\n            \"banner_name\": \"Banner 5\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"id\": 6,\n            \"banner_name\": \"Banner 6\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Services",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost_express}}services",
+							"host": [
+								"{{localhost_express}}services"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Services",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{localhost_express}}services",
+									"host": [
+										"{{localhost_express}}services"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1732"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6c4-hBNLmZ7k/h/u7U3vMlE3W3XiTMg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 08:43:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Sukses\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"service_code\": \"PAJAK\",\n            \"service_name\": \"Pajak PBB\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 40000\n        },\n        {\n            \"id\": 2,\n            \"service_code\": \"PLN\",\n            \"service_name\": \"Listrik\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 10000\n        },\n        {\n            \"id\": 3,\n            \"service_code\": \"PDAM\",\n            \"service_name\": \"PDAM Berlangganan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 40000\n        },\n        {\n            \"id\": 4,\n            \"service_code\": \"PULSA\",\n            \"service_name\": \"Pulsa\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 40000\n        },\n        {\n            \"id\": 5,\n            \"service_code\": \"PGN\",\n            \"service_name\": \"PGN Berlangganan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 50000\n        },\n        {\n            \"id\": 6,\n            \"service_code\": \"MUSIK\",\n            \"service_name\": \"Musik Belangganan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 50000\n        },\n        {\n            \"id\": 7,\n            \"service_code\": \"TV\",\n            \"service_name\": \"TV Berlangganan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 50000\n        },\n        {\n            \"id\": 8,\n            \"service_code\": \"PAKET_DATA\",\n            \"service_name\": \"Paket Data\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 50000\n        },\n        {\n            \"id\": 9,\n            \"service_code\": \"VOUCHER_GAME\",\n            \"service_name\": \"Voucher Game\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 100000\n        },\n        {\n            \"id\": 10,\n            \"service_code\": \"VOUCHER_MAKANAN\",\n            \"service_name\": \"Voucher Makanan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 100000\n        },\n        {\n            \"id\": 11,\n            \"service_code\": \"QURBAN\",\n            \"service_name\": \"Qurban\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 200000\n        },\n        {\n            \"id\": 12,\n            \"service_code\": \"ZAKAT\",\n            \"service_name\": \"Zakat\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tarif\": 300000\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Balances",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost_express}}balance",
+							"host": [
+								"{{localhost_express}}balance"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Balances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"top_up_amount\": 1000000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost_express}}balance",
+									"host": [
+										"{{localhost_express}}balance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-1dOrjeMYfqTVWs6Ktwf+LjMf79w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 11:13:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Sukses\",\n    \"data\": {\n        \"balance\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Topup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"top_up_amount\": 1000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost_express}}topup",
+							"host": [
+								"{{localhost_express}}topup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Topup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"top_up_amount\": 1000000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost_express}}topup",
+									"host": [
+										"{{localhost_express}}topup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-zaxGTzfJUZLudiMGN8b8k7+r7Y4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 11:42:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Top Up Balance berhasil\",\n    \"data\": {\n        \"balance\": \"1000000\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"service_code\": \"PULSA\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost_express}}transaction",
+							"host": [
+								"{{localhost_express}}transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Transaction",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"service_code\": \"PULSA\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost_express}}transaction",
+									"host": [
+										"{{localhost_express}}transaction"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"da-s8rpO/WlaF7sCuyiW+shOYKGvmA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 12:50:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Transaksi berhasil\",\n    \"data\": {\n        \"invoice_number\": \"INV20102024-002\",\n        \"service_code\": \"PULSA\",\n        \"service_name\": \"Pulsa\",\n        \"transaction_type\": \"PAYMENT\",\n        \"total_amount\": 40000,\n        \"created_on\": \"2024-10-20 19:50:57\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost_express}}transaction/history?offset=0&limit=3",
+							"host": [
+								"{{localhost_express}}transaction"
+							],
+							"path": [
+								"history"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJyZXMuZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNzI5NDAwNDI0LCJleHAiOjE3MzE5OTI0MjR9.spwy5F-pRLuTa-U1tQ7amvX0x_PL-Gf_iy4-8GV72d4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{localhost_express}}transaction/history?offset=0&limit=3",
+									"host": [
+										"{{localhost_express}}transaction"
+									],
+									"path": [
+										"history"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "397"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18d-pk5+U8MpuHqyXxRvrC7JKila6AU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 13:10:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": \"Get History Berhasil\",\n    \"data\": {\n        \"offset\": \"0\",\n        \"limit\": \"3\",\n        \"record\": [\n            {\n                \"invoice_number\": \"INV20102024-002\",\n                \"transaction_type\": \"PAYMENT\",\n                \"description\": \"Pulsa\",\n                \"total_amount\": 40000,\n                \"created_on\": \"2024-10-20T12:50:57.000Z\"\n            },\n            {\n                \"invoice_number\": \"INV20102024-001\",\n                \"transaction_type\": \"TOPUP\",\n                \"description\": \"Top Up balance\",\n                \"total_amount\": 1000000,\n                \"created_on\": \"2024-10-20T11:42:25.000Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
