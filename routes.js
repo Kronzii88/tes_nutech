@@ -87,11 +87,11 @@ module.exports = (app) => {
     res.status(200).json({
       metadata: {
         status: 200,
-        message: "Api TES NUTECH ready to use!",
+        message: "Api Tes Nutech ready to use!",
       },
       response: {
         data: {
-          name: "Backend STEMBA Mobile",
+          name: "Backend Tes Nutech Mobile",
         },
       },
     });
